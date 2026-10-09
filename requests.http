@@ -1,0 +1,23 @@
+### Crear cuenta
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "ownerName": "Didier",
+  "initialBalance": 1000.00
+}
+
+### Consultar cuenta
+GET http://localhost:8080/accounts/1
+
+### Cuenta inexistente (debe dar 404)
+GET http://localhost:8080/accounts/999
+
+### Nombre vacío (debe dar 400)
+POST http://localhost:8080/accounts
+Content-Type: application/json
+
+{
+  "ownerName": "",
+  "initialBalance": 500.00
+}
